@@ -17,7 +17,16 @@ To create the PyTorch environment for training and inference please refer the fi
 
 **Model Training:**
 ```python
-python train_model_6band.py --checkpoint_dir ckpts --data_path TensorFlowRecords --figure_path figs --data_dim 1 --model_index 1 --num_epoch 2 --batch_size 24 --learning_rate 0.1
+python train_model_6band.py --save_dir tb_logs --train_data_path Path_to_your_train_data --model_type dice --data_dim 1 --num_epoch 100 --batch_size 32 --learning_rate 0.00001 --seed 42
+```
+
+**Inference:**
+
+We provide three types of model design:
+```
+1: Baseline (dice_noSR): DeepLabV3+ with ResNet50 using DiceBCE loss without Super-resolution operations
+2: SR-Dice (dice): DeepLabV3+ with ResNet50 using DiceBCE loss
+3: SR-BCE (bce): DeepLabV3+ with ResNet50 using BCE loss
 ```
 
 
