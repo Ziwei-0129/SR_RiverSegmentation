@@ -29,4 +29,9 @@ We provide three types of model design:
 3: SR-BCE (bce): DeepLabV3+ with ResNet50 using BCE loss
 ```
 
+Our pretrained model checkpoints can be downloaded from [checkpoints](https://drive.google.com/drive/folders/1u3jlJdKWEbR0TaA9opYDEVvcF4YA5W6p?usp=sharing)
 
+
+### Acknowledgement
+
+The segmentation networks are implemented based on the [OpenMMLab](https://github.com/open-mmlab/mmsegmentation)
