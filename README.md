@@ -1,5 +1,5 @@
 # SR_RiverSegmentation
-Codes for Super-Resolution Deep Neural Networks for Water Classification 3 from Free Multispectral Satellite Imagery
+Codes for Super-Resolution Deep Neural Networks for Water Classification from Free Multispectral Satellite Imagery
 
 ### Requirements
 - OpenCV
@@ -20,9 +20,16 @@ To create the PyTorch environment for training and inference please refer the fi
 python train_model_6band.py --save_dir tb_logs --train_data_path Path_to_your_train_data --model_type dice --data_dim 1 --num_epoch 100 --batch_size 32 --learning_rate 0.00001 --seed 42
 ```
 
+**Format of training dataset**
+There are 3 image triples:
+1. image - Sentinel-2 RGB-NIR image at 10m resolution (6, 512, 512)
+2. mask - Binary segmentation mask at 2m resolution (1, 2560, 2560)
+3. hres - High resolution RGB-NIR image at 2m resolution (6, 2560, 2560)
+
+
 **Inference:**
 
-We provide three types of model design:
+We provide three designs of the Sentinel-2 Super Resolution Segmentation model:
 ```
 1: Baseline (dice_noSR): DeepLabV3+ with ResNet50 using DiceBCE loss without Super-resolution operations
 2: SR-Dice (dice): DeepLabV3+ with ResNet50 using DiceBCE loss
