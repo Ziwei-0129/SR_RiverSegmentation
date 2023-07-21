@@ -21,6 +21,7 @@ python train_model_6band.py --save_dir tb_logs --train_data_path Path_to_your_tr
 ```
 
 **Format of training dataset**
+
 There are 3 image triples:
 1. image - Sentinel-2 RGB-NIR image at 10m resolution (6, 512, 512)
 2. mask - Binary segmentation mask at 2m resolution (1, 2560, 2560)
