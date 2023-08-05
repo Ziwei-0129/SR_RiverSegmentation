@@ -76,7 +76,7 @@ if __name__ == "__main__":
     parser.add_argument('--num_epoch', type=int, help="Number of epochs to train")
     parser.add_argument('--batch_size', type=int, default=32, help="Training batch size")
     parser.add_argument('--learning_rate', type=float, default=0.00006, help="Training learning rate")
-    parser.add_argument('--n_gpus', type=int, default=42, help="Number of GPU to use")
+    parser.add_argument('--n_gpus', type=int, default=1, help="Number of GPU to use")
     parser.add_argument('--seed', type=int, default=42, help="random seed")
     args = parser.parse_args()
 
