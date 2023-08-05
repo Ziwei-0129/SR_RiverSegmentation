@@ -17,12 +17,12 @@ To create the PyTorch environment for training and inference please refer the fi
 
 **Model Training:**
 ```python
-python train_model_6band.py --save_dir tb_logs --train_data_path Path_to_your_train_data --model_type dice --data_dim 1 --num_epoch 100 --batch_size 32 --learning_rate 0.00001 --seed 42
+python train_model_6band.py --save_dir tb_logs --train_data_path .../SuperResolution/chips/npy_6band_nonan --model_type dice --data_dim 1 --num_epoch 100 --batch_size 32 --learning_rate 0.00001 --seed 42
 ```
 
 **Format of training dataset**
 
-There are 3 image triples:
+There are three image triples (you need three data folders under the training dataset path):
 1. image - Sentinel-2 RGB-NIR image at 10m resolution (6, 512, 512)
 2. mask - Binary segmentation mask at 2m resolution (1, 2560, 2560)
 3. hres - High resolution RGB-NIR image at 2m resolution (6, 2560, 2560)
