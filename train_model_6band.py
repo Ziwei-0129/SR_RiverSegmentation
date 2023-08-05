@@ -51,7 +51,8 @@ def cli_main(args):
     # Training:
     trainer: pl.Trainer = pl.Trainer(
         # deterministic=True,
-        gpus=2,
+        # accelerator="cpu",
+        gpus=args.n_gpus,
         logger=tensorboard_logger,
         max_epochs=args.num_epoch,
         precision=16,
@@ -71,10 +72,11 @@ if __name__ == "__main__":
     parser.add_argument('--checkpoint_dir', type=str, default=None, help="Path to the pretrained model checkpoint")
     parser.add_argument('--save_dir', type=str, default='tb_logs', help="Path to save the checkpoints")
     parser.add_argument('--train_data_path', type=str, help="Path to the training dataset")
-    parser.add_argument('--model_type', type=int, help="dice, bce, or dice_noSR")
+    parser.add_argument('--model_type', type=str, help="dice, bce, or dice_noSR")
     parser.add_argument('--num_epoch', type=int, help="Number of epochs to train")
     parser.add_argument('--batch_size', type=int, default=32, help="Training batch size")
     parser.add_argument('--learning_rate', type=float, default=0.00006, help="Training learning rate")
+    parser.add_argument('--n_gpus', type=int, default=42, help="Number of GPU to use")
     parser.add_argument('--seed', type=int, default=42, help="random seed")
     args = parser.parse_args()
 
